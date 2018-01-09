@@ -1,0 +1,12 @@
+services:
+    security.string_encoder:
+        class: AppBundle\Service\SHA256Encoder
+
+    security.token_manipulator:
+        class: AppBundle\Service\TokenManipulator
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+            $encoder: '@security.string_encoder'
+
+    security.roles:
+        class: AppBundle\Service\RoleHierarchy

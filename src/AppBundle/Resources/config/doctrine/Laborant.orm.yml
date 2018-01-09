@@ -1,0 +1,27 @@
+AppBundle\Entity\Laborant:
+    type: entity
+    table: laborants
+    id:
+        id:
+            type: smallint
+            generator:
+                strategy: AUTO
+
+    fields:
+        firstname:
+            type: string
+            length: 255
+
+        lastname:
+            type: string
+            length: 255
+
+        CNP:
+            type: string
+            length: 13
+            nullable: true
+
+    oneToMany:
+        laboratories:
+            targetEntity: AppBundle\Entity\Laboratory
+            mappedBy: laborant

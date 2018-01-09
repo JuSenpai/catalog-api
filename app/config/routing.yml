@@ -1,0 +1,9 @@
+app:
+    prefix: /
+    resource: '@AppBundle/Resources/config/routing/routing.yml'
+    type: rest
+
+
+NelmioAppDocBundle:
+    resource: '@NelmioApiDocBundle/Resources/config/routing/swaggerui.xml'
+    prefix: /doc

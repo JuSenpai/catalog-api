@@ -1,0 +1,29 @@
+student.all:
+    path: /
+    defaults: { _controller: AppBundle:Student:getAll }
+
+student.add:
+    path: /add
+    defaults: { _controller: AppBundle:Student:addNew }
+    methods: [POST]
+
+student.edit:
+    path: /{student}/edit
+    defaults: { _controller: AppBundle:Student:edit }
+    requirements:
+        id: \d+
+    methods: [POST]
+
+student.get:
+    path: /{student}
+    defaults: { _controller: AppBundle:Student:getOne }
+    requirements:
+        student: \d+
+    methods: [GET]
+
+student.delete:
+    path: /{student}/delete
+    defaults: { _controller: AppBundle:Student:delete }
+    requirements:
+        student: \d+
+    methods: [POST]

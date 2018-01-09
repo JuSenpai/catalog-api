@@ -1,0 +1,36 @@
+AppBundle\Entity\Student:
+    type: entity
+    table: students
+
+    id:
+        id:
+            type: smallint
+            generator:
+                strategy: AUTO
+
+    fields:
+        firstname:
+            type: string
+            length: 32
+        lastname:
+            type: string
+            length: 32
+        CNP:
+            type: string
+            length: 13
+        group:
+            type: string
+            length: 8
+
+    manyToMany:
+        laboratories:
+            targetEntity: AppBundle\Entity\Laboratory
+            inversedBy: students
+            joinTable:
+                name: student_laboratory
+                joinColumns:
+                    student_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    laboratory_id:
+                        referencedColumnName: id

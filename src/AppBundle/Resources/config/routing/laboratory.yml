@@ -1,0 +1,29 @@
+laboratory.all:
+    path: /
+    defaults: { _controller: AppBundle:Laboratory:getAll }
+
+laboratory.add:
+    path: /add
+    defaults: { _controller: AppBundle:Laboratory:addNew }
+    methods: [POST]
+
+laboratory.edit:
+    path: /{laboratory}/edit
+    defaults: { _controller: AppBundle:Laboratory:edit }
+    requirements:
+        id: \d+
+    methods: [POST]
+
+laboratory.get:
+    path: /{laboratory}
+    defaults: { _controller: AppBundle:Laboratory:getOne }
+    requirements:
+        laboratory: \d+
+    methods: [GET]
+
+laboratory.delete:
+    path: /{laboratory}/delete
+    defaults: { _controller: AppBundle:Laboratory:delete }
+    requirements:
+        laboratory: \d+
+    methods: [POST]

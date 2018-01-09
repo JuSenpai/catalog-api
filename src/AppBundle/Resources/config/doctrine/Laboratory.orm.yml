@@ -1,0 +1,27 @@
+AppBundle\Entity\Laboratory:
+    type: entity
+    table: laboratories
+    id:
+        id:
+            type: smallint
+            generator:
+                strategy: AUTO
+
+    fields:
+        name:
+            type: string
+            length: 255
+
+        year:
+            type: smallint
+
+
+    manyToOne:
+        laborant:
+            targetEntity: AppBundle\Entity\Laborant
+            inversedBy: laboratories
+
+    manyToMany:
+        students:
+            targetEntity: AppBundle\Entity\Student
+            mappedBy: laboratories

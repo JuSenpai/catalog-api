@@ -1,0 +1,29 @@
+laborant.all:
+    path: /
+    defaults: { _controller: AppBundle:Laborant:getAll }
+
+laborant.add:
+    path: /add
+    defaults: { _controller: AppBundle:Laborant:addNew }
+    methods: [POST]
+
+laborant.edit:
+    path: /{id}/edit
+    defaults: { _controller: AppBundle:Laborant:edit }
+    requirements:
+        id: \d+
+    methods: [POST]
+
+laborant.get:
+    path: /{laborant}
+    defaults: { _controller: AppBundle:Laborant:getOne }
+    requirements:
+        laborant: \d+
+    methods: [GET]
+
+laborant.delete:
+    path: /{laborant}/delete
+    defaults: { _controller: AppBundle:Laborant:delete }
+    requirements:
+        laborant: \d+
+    methods: [POST]
