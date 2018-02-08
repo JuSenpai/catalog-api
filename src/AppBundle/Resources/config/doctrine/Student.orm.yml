@@ -11,26 +11,48 @@ AppBundle\Entity\Student:
     fields:
         firstname:
             type: string
-            length: 32
+            length: 255
         lastname:
             type: string
-            length: 32
+            length: 255
         CNP:
             type: string
             length: 13
         group:
             type: string
             length: 8
+            column: group_name
+
+
+    oneToMany:
+        attendance:
+            targetEntity: AppBundle\Entity\Attendance
+            cascade: ["persist"]
+            mappedBy: student
+
+
+    oneToOne:
+        user:
+            targetEntity: AppBundle\Entity\User
+            cascade: ["persist"]
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+                onDelete: CASCADE
+                onUpdate: CASCADE
+
 
     manyToMany:
         laboratories:
             targetEntity: AppBundle\Entity\Laboratory
             inversedBy: students
             joinTable:
-                name: student_laboratory
+                name: students_laboratories
                 joinColumns:
                     student_id:
                         referencedColumnName: id
+                        onDelete: CASCADE
                 inverseJoinColumns:
                     laboratory_id:
                         referencedColumnName: id
+                        onDelete: CASCADE

@@ -1,0 +1,39 @@
+user.all:
+    path: /
+    defaults: { _controller: AppBundle:User:fetchAll }
+
+user.current:
+    path: /current
+    defaults: { _controller: AppBundle:User:getCurrentUser }
+    methods: [POST]
+
+user.register:
+    path: /register
+    defaults: { _controller: AppBundle:User:register }
+    methods: [POST]
+
+user.add:
+    path: /add
+    defaults: { _controller: AppBundle:User:addUser }
+    methods: [POST]
+
+user.delete:
+    path: /{userId}/delete
+    defaults: { _controller: AppBundle:User:deleteUser }
+    requirements:
+        userId: \d+
+    methods: [POST]
+
+user.edit:
+    path: /{userId}/edit
+    defaults: { _controller: AppBundle:User:editUser }
+    requirements:
+        userId: \d+
+    methods: [POST]
+
+user.getOneByUsername:
+    path: /{username}/
+    defaults: { _controller: AppBundle:User:getByUsername }
+    requirements:
+        username: '[\w._]+'
+    methods: [GET]

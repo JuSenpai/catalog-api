@@ -7,8 +7,10 @@ class Laboratory
     private $id;
     private $name;
     private $year;
+    private $count;
     private $laborant;
     private $students;
+    private $attendance;
 
     public function getId()
     {
@@ -43,6 +45,26 @@ class Laboratory
     public function setYear($year)
     {
         $this->year = $year;
+    }
+
+    public function setAttendance($attendance)
+    {
+        $this->attendance = $attendance;
+    }
+
+    public function getCount()
+    {
+        return $this->count;
+    }
+
+    public function setCount($count)
+    {
+        $this->count = $count;
+    }
+
+    public function getStudents()
+    {
+        return $this->students;
     }
 
     public function setStudents($students)

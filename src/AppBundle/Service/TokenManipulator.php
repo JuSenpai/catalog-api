@@ -54,7 +54,7 @@ class TokenManipulator
         return true;
     }
 
-    public function getUser($token)
+    public function getUser($token) : User
     {
         $tokenData = $this->extract($token);
         if ($tokenData === null) {

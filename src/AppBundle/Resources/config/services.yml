@@ -10,3 +10,10 @@ services:
 
     security.roles:
         class: AppBundle\Service\RoleHierarchy
+
+    catalog.users:
+        class: AppBundle\Service\UserService
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+            $encoder: '@security.string_encoder'
+            $hierarchy: '@security.roles'

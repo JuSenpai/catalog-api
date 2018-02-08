@@ -8,19 +8,10 @@ token.validate:
     defaults: { _controller: AppBundle:User:validateToken }
     methods: [POST]
 
-user.current:
-    path: /user/current
-    defaults: { _controller: AppBundle:User:getCurrentUser }
-    methods: [POST]
-
-user.register:
-    path: /user/register
-    defaults: { _controller: AppBundle:User:register }
-
-lab.new:
-    path: /laboratory/add
-    defaults: { _controller: AppBundle:Laboratory:addNew }
-    methods: [POST]
+user.routes:
+    prefix: /user
+    resource: '@AppBundle/Resources/config/routing/user.yml'
+    type: rest
 
 laborant.routes:
     prefix: /laborant
@@ -35,4 +26,16 @@ laboratory.routes:
 student.routes:
     prefix: /student
     resource: '@AppBundle/Resources/config/routing/student.yml'
+    type: rest
+
+attendance.get:
+    path: /attendance
+    defaults: { _controller: AppBundle:User:getAttendance }
+    methods: [POST]
+    type: rest
+
+attendance.set:
+    path: /attendance/set
+    defaults: { _controller: AppBundle:User:setAttendance }
+    methods: [POST]
     type: rest

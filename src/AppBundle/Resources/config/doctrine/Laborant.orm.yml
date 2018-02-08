@@ -25,3 +25,12 @@ AppBundle\Entity\Laborant:
         laboratories:
             targetEntity: AppBundle\Entity\Laboratory
             mappedBy: laborant
+
+    oneToOne:
+        user:
+            targetEntity: AppBundle\Entity\User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+                onDelete: CASCADE
+                onUpdate: CASCADE

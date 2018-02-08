@@ -8,6 +8,7 @@ class Laborant
     private $firstname;
     private $lastname;
     private $CNP;
+    private $user;
     private $laboratories = [];
 
     public function getId()
@@ -48,5 +49,15 @@ class Laborant
     public function setLaboratories($laboratories)
     {
         $this->laboratories = $laboratories;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser($user)
+    {
+        $this->user = $user;
     }
 }

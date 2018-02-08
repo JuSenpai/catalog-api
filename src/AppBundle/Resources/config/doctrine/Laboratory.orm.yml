@@ -15,11 +15,19 @@ AppBundle\Entity\Laboratory:
         year:
             type: smallint
 
+        count:
+            type: smallint
+
 
     manyToOne:
         laborant:
             targetEntity: AppBundle\Entity\Laborant
             inversedBy: laboratories
+
+    oneToMany:
+        attendance:
+            targetEntity: AppBundle\Entity\Attendance
+            mappedBy: laboratory
 
     manyToMany:
         students:

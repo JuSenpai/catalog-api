@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-
 class Student
 {
     private $id;
@@ -10,6 +9,8 @@ class Student
     private $lastname;
     private $CNP;
     private $group;
+    private $user;
+    private $attendance;
     private $laboratories;
 
     public function getId()
@@ -55,6 +56,31 @@ class Student
     public function setGroup($group)
     {
         $this->group = $group;
+    }
+
+    public function setAttendance($attendance)
+    {
+        $this->attendance = $attendance;
+    }
+
+    public function getAttendance()
+    {
+        return $this->attendance;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    public function getLaboratories()
+    {
+        return $this->laboratories;
     }
 
     public function setLaboratories($laboratories)

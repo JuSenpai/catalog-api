@@ -27,3 +27,11 @@ laboratory.delete:
     requirements:
         laboratory: \d+
     methods: [POST]
+
+laboratory.filter:
+    path: /filter/username
+    defaults: { _controller: AppBundle:Laboratory:filter }
+
+laboratory.current:
+    path: /current
+    defaults: { _controller: AppBundle:Laboratory:currentUser }
